@@ -10,6 +10,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "amazon-cognito-identity-js": "^1.20.0",
+    "aws-sdk": "^2.122.0",
     "nuxt": "^1.0.0-rc11",
     "vuetify": "^0.14.8"
   },
