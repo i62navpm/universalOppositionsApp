@@ -30,4 +30,3 @@ export default class AWSSDK {
     AWS.config.credentials.refresh(callback)
   }
 }
-
