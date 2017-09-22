@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app
+  .application.application--light
     main
       transition(name="fade" mode="out-in")
         nuxt
