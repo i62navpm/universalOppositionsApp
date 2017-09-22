@@ -1,5 +1,5 @@
 const debug = require('debug')('utils:awsSDK')
-const config = require('@/../config/config.js')
+const config = require('@/config/config.js')
 const AWS = require('aws-sdk')
 
 export default class AWSSDK {

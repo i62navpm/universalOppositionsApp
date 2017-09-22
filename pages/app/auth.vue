@@ -4,11 +4,7 @@
       transition(name="fade" mode="out-in")
         nuxt
 </template>
-<script>
-export default {
-  middleware: 'auth'
-}
-</script>
+
 <style>
 
 </style>

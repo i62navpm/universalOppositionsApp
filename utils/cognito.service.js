@@ -1,7 +1,7 @@
-const debug = require('debug')('utils:cognitoSDK')
-const config = require('@/../config/config.js')
-const AmazonCognitoIdentity = require('amazon-cognito-identity-js')
 import AWSSDK from './aws.service'
+const debug = require('debug')('utils:cognitoSDK')
+const config = require('@/config/config.js')
+const AmazonCognitoIdentity = require('amazon-cognito-identity-js')
 
 export default class AWSCognitoSDK extends AWSSDK {
   constructor() {
@@ -23,7 +23,7 @@ export default class AWSCognitoSDK extends AWSSDK {
   getSession(callback) {
     this.cognitoUser = this.userPool.getCurrentUser()
     if (!this.cognitoUser) {
-      callback('Not exist session user')
+      callback(new Error('Not exist session user'))
       return
     }
     this.cognitoUser.getSession(callback)
@@ -85,4 +85,3 @@ export default class AWSCognitoSDK extends AWSSDK {
     this.setCredentials(token)
   }
 }
-

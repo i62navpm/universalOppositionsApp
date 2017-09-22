@@ -11,7 +11,7 @@
 export default {
   layout: 'auth',
   beforeCreate () {
-    this.$store.state.route.name && this.$router.replace('login')
+    this.$store.state.route.name === 'auth' && this.$router.replace({name: 'auth-login'})
   }
 }
 </script>
