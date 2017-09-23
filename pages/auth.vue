@@ -1,10 +1,6 @@
 <template lang="pug">
-  v-card.grey.lighten-5(flat)
-    v-toolbar.primary.elevation-3(dark, extended)
-      v-toolbar-title Opposition APP
-    v-layout(row)
-      transition(name="fade" mode="out-in")
-        nuxt-child
+  transition(name="fade" mode="out-in")
+    nuxt-child
 </template>
 
 <script>

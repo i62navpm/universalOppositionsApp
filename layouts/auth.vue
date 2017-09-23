@@ -2,7 +2,11 @@
   .application.application--light
     main
       transition(name="fade" mode="out-in")
-        nuxt
+          v-card.grey.lighten-5(flat)
+            v-toolbar.primary.elevation-3(dark, extended)
+              v-toolbar-title Opposition APP
+            v-layout(row)
+              nuxt
 </template>
 
 <script>
