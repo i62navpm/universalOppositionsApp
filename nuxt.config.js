@@ -14,10 +14,8 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js', '~/plugins/vuex-router-sync.js'],
-  css: [
-    '~/assets/style/app.styl', '~/assets/style/main.scss'
-  ],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/vuex-router-sync.js', {src: '~/plugins/aws-services.js', ssr: false}],
+  css: [ '~/assets/style/app.styl', '~/assets/style/main.scss' ],
   /*
   ** Customize the progress-bar color
   */

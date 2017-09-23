@@ -11,8 +11,7 @@
 
 <script>
 export default {
-  name: 'app',
-  middleware: 'init'
+  name: 'app'
 }
 </script>
 <style>

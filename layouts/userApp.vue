@@ -35,7 +35,6 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'app',
-  middleware: 'init',
   methods: {
     ...mapActions({
       logoutUser: 'auth/LOGOUT_USER'
