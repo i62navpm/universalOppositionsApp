@@ -4,11 +4,24 @@
       transition(name="fade" mode="out-in")
         nuxt
 </template>
+
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  middleware: 'auth'
+  name: 'app',
+  methods: {
+    ...mapActions({
+      initCognito: 'auth/INIT_COGNITO',
+      getCurrentUser: 'auth/GET_CURRENT_USER'
+    })
+  },
+  created: function () {
+    this.initCognito()
+  }
 }
 </script>
+
 <style>
 
 </style>
