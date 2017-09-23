@@ -1,6 +1,6 @@
 # universaloppositionsapp
 
-> Nuxt.js + Vuetify.js project
+> Nuxt.js + Vuetify.js + AWS [Cognito - Lambda - S3 - CloudFront] project
 
 ## Build Setup
 
