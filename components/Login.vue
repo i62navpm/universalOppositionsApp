@@ -44,7 +44,7 @@ export default {
 
       try {
         await this.loginUser({ email: this.email.trim(), password: this.password.trim() })
-        this.$router.push({ name: 'hello' })
+        this.$router.push({ name: 'app-hello' })
       } catch (error) {
         debug('Error:', error.message)
         this.error = error.message
