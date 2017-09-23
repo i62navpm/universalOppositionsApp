@@ -1,5 +1,5 @@
+import AWS from 'aws-sdk'
 const debug = require('debug')('utils:LambdaSDK')
-const AWS = require('aws-sdk')
 
 export default class AWSLambdaSDK {
   constructor() {

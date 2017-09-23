@@ -35,19 +35,15 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'app',
+  middleware: 'init',
   methods: {
     ...mapActions({
-      initCognito: 'auth/INIT_COGNITO',
-      getCurrentUser: 'auth/GET_CURRENT_USER',
       logoutUser: 'auth/LOGOUT_USER'
     }),
     async logout() {
       await this.logoutUser()
       this.$router.push({ name: 'auth-login' })
     }
-  },
-  created: function () {
-    this.initCognito()
   },
   data() {
     return {

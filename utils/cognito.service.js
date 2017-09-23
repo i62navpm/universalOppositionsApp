@@ -1,7 +1,7 @@
 import AWSSDK from './aws.service'
+import { CognitoUserPool, AuthenticationDetails, CognitoUser } from 'amazon-cognito-identity-js'
 const debug = require('debug')('utils:cognitoSDK')
 const config = require('@/config/config.js')
-const AmazonCognitoIdentity = require('amazon-cognito-identity-js')
 
 export default class AWSCognitoSDK extends AWSSDK {
   constructor() {
@@ -17,7 +17,7 @@ export default class AWSCognitoSDK extends AWSSDK {
       ClientId: config.cognito.ClientId
     }
 
-    this.userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData)
+    this.userPool = new CognitoUserPool(poolData)
   }
 
   getSession(callback) {
@@ -47,7 +47,7 @@ export default class AWSCognitoSDK extends AWSSDK {
       Email: email,
       Password: password
     }
-    let authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData)
+    let authenticationDetails = new AuthenticationDetails(authenticationData)
 
     this.cognitoUser = this.getCognitoUser(email)
     return this.cognitoUser.authenticateUser(authenticationDetails, { onSuccess, onFailure })
@@ -68,7 +68,7 @@ export default class AWSCognitoSDK extends AWSSDK {
       Username,
       Pool: this.userPool
     }
-    return new AmazonCognitoIdentity.CognitoUser(userData)
+    return new CognitoUser(userData)
   }
 
   forgotPassword(email, { onSuccess, onFailure }) {

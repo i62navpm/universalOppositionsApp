@@ -15,7 +15,7 @@ export const mutations = {
 }
 
 export const actions = {
-  INIT_COGNITO: ({ state, commit }) => {
+  INIT_COGNITO: ({ state, commit }, hola) => {
     if (cognitoSDK) return
     cognitoSDK = new AWSCognitoSDK()
   },
