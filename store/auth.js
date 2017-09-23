@@ -1,6 +1,4 @@
 import AWSCognitoSDK from '@/utils/cognito.service.js'
-import createPersistedState from 'vuex-persistedstate'
-import * as Cookies from 'js-cookie'
 var debug = require('debug')('auth')
 
 export const state = () => ({
@@ -36,16 +34,6 @@ export const actions = {
         debug('User session valid:', session.isValid())
         resolve(session.isValid())
         state.cognitoSDK.setToken(session.getIdToken().jwtToken)
-        // state.cognitoSDK.refreshCredentials((err) => {
-        //   if (err) {
-        //     commit('SET_USER', null)
-        //     debug('Error:', err)
-        //     reject(err)
-        //     return
-        //   }
-        //   debug('User session refreshed')
-        //   resolve(true)
-        // })
       })
     })
   },
@@ -132,13 +120,3 @@ export const actions = {
     })
   }
 }
-
-export const plugins = [createPersistedState({
-  key: 'user',
-  paths: ['auth.user'],
-  storage: {
-    getItem: (key) => Cookies.getJSON(key),
-    setItem: (key, value) => Cookies.set(key, value, { expires: 3, secure: true }),
-    removeItem: (key) => Cookies.remove(key)
-  }
-})]
