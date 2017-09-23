@@ -74,7 +74,7 @@ export default {
         page: this.query ? 1 : page,
         rowsPerPage
       }
-      let { data, total } = await this.$parent.lambda.invoke(params)
+      let { data, total } = await this.$parent.$parent.lambda.invoke(params)
       this.loading = false
 
       return { data, total }
