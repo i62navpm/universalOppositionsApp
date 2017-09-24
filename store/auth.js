@@ -13,7 +13,6 @@ export const mutations = {
 
 export const actions = {
   INIT_COGNITO: ({ state, commit }) => {
-    if (state.cognitoSDK) return
     commit('SET_COGNITO', new AWSCognitoSDK())
   },
   GET_CURRENT_USER: async ({ dispatch, state, commit }) => {

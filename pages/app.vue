@@ -8,11 +8,12 @@ import AWSLambdaSDK from '@/utils/lambda.service'
 
 export default {
   layout: 'userApp',
-  beforeCreate () {
-    this.$store.state.route.name === 'app' && this.$router.replace({name: 'app-hello'})
+  beforeCreate() {
+    this.$store.state.route.name === 'app' && this.$router.replace({ name: 'app-hello' })
   },
   created() {
     this.lambda = new AWSLambdaSDK()
+    this.$store.dispatch('auth/GET_CURRENT_USER')
   }
 }
 </script>
