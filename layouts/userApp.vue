@@ -1,7 +1,7 @@
 <template lang="pug">
 
   .application.application--light
-    .main(toolbar)
+    v-app.main(toolbar)
       v-navigation-drawer(absolute, persistent, light, :mini-variant.sync='mini', v-model='drawer', overflow)
         v-toolbar.transparent(flat)
           v-list.pa-0
