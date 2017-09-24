@@ -1,3 +1,3 @@
-export default ({ app, store }) => {
-  store.dispatch('auth/INIT_COGNITO')
+export default async ({ app, store }) => {
+  await store.dispatch('auth/INIT_COGNITO')
 }

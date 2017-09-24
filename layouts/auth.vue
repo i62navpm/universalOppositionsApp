@@ -1,5 +1,5 @@
 <template lang="pug">
-  .application.application--light
+  v-app.application.application--light
     main
       transition(name="fade" mode="out-in")
           v-card.grey.lighten-5(flat)
@@ -11,7 +11,12 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  async beforeCreate() {
+    if (!this.$nuxt.$isServer && await this.$store.dispatch('auth/GET_CURRENT_USER')) {
+      this.$router.push({ name: 'app-hello' })
+    }
+  }
 }
 </script>
 <style>

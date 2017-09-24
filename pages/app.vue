@@ -13,7 +13,6 @@ export default {
   },
   created() {
     this.lambda = new AWSLambdaSDK()
-    this.$store.dispatch('auth/GET_CURRENT_USER')
   }
 }
 </script>

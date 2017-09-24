@@ -35,6 +35,13 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'app',
+  async beforeCreate() {
+    try {
+      !this.$nuxt.$isServer && await this.$store.dispatch('auth/GET_CURRENT_USER')
+    } catch (error) {
+      this.$router.push({ name: 'auth-login' })
+    }
+  },
   methods: {
     ...mapActions({
       logoutUser: 'auth/LOGOUT_USER'
